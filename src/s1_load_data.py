@@ -4,7 +4,7 @@ from sklearn import datasets
 # + tags=["parameters"]
 upstream = None
 product = {
-    'nb': 'notebooks/s1_load_data.ipynb',
+    'nb': '../src/pipeline_notebooks/s1.ipynb',
     'data': '../data/raw/raw_data.csv'
 }
 # -

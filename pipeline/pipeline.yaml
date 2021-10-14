@@ -2,11 +2,11 @@ tasks:
   - source: ../src/s1_load_data.py
     name: load_data
     product:
-      nb: ../notebooks/s1.ipynb
+      nb: ../src/pipeline_notebooks/s1.ipynb
       data: ../data/raw/raw_data.csv
 
   - source: ../src/s2_preprocess_data.py
     name: preprocess_data
     product:
-      nb: ../notebooks/s2.ipynb
+      nb: ../src/pipeline_notebooks/s2.ipynb
       data: ../data/processed/processed_data.csv
