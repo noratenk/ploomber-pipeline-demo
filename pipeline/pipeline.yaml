@@ -10,3 +10,9 @@ tasks:
     product:
       nb: ../src/pipeline_notebooks/s2.ipynb
       data: ../data/processed_data.csv
+
+  - source: ../src/s3_train_model.py
+    name: train
+    product:
+      nb: ../src/pipeline_notebooks/s3.ipynb
+      model: ../models/model.pickle
