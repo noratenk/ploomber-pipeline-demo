@@ -3,10 +3,10 @@ tasks:
     name: load_data
     product:
       nb: ../src/pipeline_notebooks/s1.ipynb
-      data: ../data/raw/raw_data.csv
+      data: ../data/raw_data.csv
 
   - source: ../src/s2_preprocess_data.py
     name: preprocess_data
     product:
       nb: ../src/pipeline_notebooks/s2.ipynb
-      data: ../data/processed/processed_data.csv
+      data: ../data/processed_data.csv

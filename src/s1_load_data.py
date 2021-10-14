@@ -5,7 +5,7 @@ from sklearn import datasets
 upstream = None
 product = {
     'nb': '../src/pipeline_notebooks/s1.ipynb',
-    'data': '../data/raw/raw_data.csv'
+    'data': '../data/raw_data.csv'
 }
 # -
 
