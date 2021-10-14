@@ -5,12 +5,12 @@ import pandas as pd
 upstream = {
     'load_data':{
         'nb': 's1_load_data.py',
-        'data': '../data/raw/raw_data.csv'
+        'data': '../data/raw_data.csv'
     }
 }
 product = {
     'nb': 'pipeline_notebooks/s2_process_data.ipynb',
-    'data': '../data/processed/processed_data.csv'
+    'data': '../data/processed_data.csv'
 }
 
 # %%
@@ -26,6 +26,6 @@ df["sepal area"] = df['sepal length (cm)'] *  df['sepal width (cm)']
 df.head(2)
 
 # %%
-df.to_csv(str(product['data']))
+df.to_csv(str(product['data']), index=False)
 
 # %%
