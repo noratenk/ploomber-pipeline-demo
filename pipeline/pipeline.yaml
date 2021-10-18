@@ -13,8 +13,15 @@ tasks:
 
   - source: ../src/s3_train_model.py
     name: train
+    static_analysis: False # notebook does not have fixed set of parameters
     product:
-      nb: ../src/pipeline_notebooks/s3.ipynb
-      model: ../models/model.pickle
-    params:
-      test_size: '{{test_size}}'
+      nb: ../src/pipeline_notebooks/{{execution_date}}/s3.ipynb
+      model: ../models/{{execution_date}}/model.pickle
+    grid:
+      - model_type: [random-forest]
+        n_estimators: [1, 5]
+        criterion: [gini, entropy]
+
+      - model_type: [gbm]
+        n_estimators: [3, 5]
+        learning_rate: [0.1, 0.2]
