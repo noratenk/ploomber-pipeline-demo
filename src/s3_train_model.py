@@ -23,6 +23,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn_evaluation import plot
 
 # %% tags=["parameters"]
+test_size = 0.33
 upstream = {
     'preprocess_data':{
         'nb': 's2_preprocess_data.py',
@@ -41,7 +42,11 @@ df = pd.read_csv(str(upstream['preprocess_data']['data']))
 df.head()
 
 # %%
-train_df, test_df = train_test_split(df, test_size=0.33, random_state=42)
+train_df, test_df = train_test_split(df, test_size=test_size, random_state=42)
+
+# %%
+print("Train shape: ", train_df.shape)
+print("Test shape: ", test_df.shape)
 
 # %%
 input_variables = df.columns.tolist()

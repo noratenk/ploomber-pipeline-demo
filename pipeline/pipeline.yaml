@@ -16,3 +16,5 @@ tasks:
     product:
       nb: ../src/pipeline_notebooks/s3.ipynb
       model: ../models/model.pickle
+    params:
+      test_size: '{{test_size}}'
