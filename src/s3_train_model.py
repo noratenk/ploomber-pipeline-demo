@@ -16,6 +16,7 @@
 # %%
 import pickle
 
+import datetime
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
@@ -34,6 +35,8 @@ product = {
     'nb': 'pipeline_notebooks/s3.ipynb',
     'model': '../models/model.pickle'
 }
+
+# %%
 
 # %%
 df = pd.read_csv(str(upstream['preprocess_data']['data']))
@@ -66,6 +69,9 @@ print(classification_report(test_df[target_variable], y_pred))
 plot.confusion_matrix(test_df[target_variable], y_pred)
 
 # %%
+now = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M')
+product['model'] = product['model'].replace('.pickle', f'_{now}.pickle')
+
 with open(product['model'], 'wb') as f:
     pickle.dump(clf, f)
 
