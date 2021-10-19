@@ -14,8 +14,13 @@ This will create an anaconda environment called ploomber-demo.
 ```sh
     conda activate ploomber-demo
 ```
-Build pipeline with:
+Run pipeline with:
 ```sh
-    ploomber build --entry-point pipeline/pipeline.yaml
+    python pipeline/run.py
 ```
 
+## Resources:
+- [Ploomber example projects on GitHub](https://github.com/ploomber/projects)
+- [Execute Jupyter notebook as a pipeline step, TDS](https://towardsdatascience.com/execute-jupyter-notebook-as-a-pipeline-step-4dba8c45aebf)
+- [Ploomber: Maintainable and Collaborative Pipelines in Jupyter, Jupyter Blog](https://blog.jupyter.org/ploomber-maintainable-and-collaborative-pipelines-in-jupyter-acb3ad2101a7)
+- [Data Science Project Folder Structure](https://dzone.com/articles/data-science-project-folder-structure)

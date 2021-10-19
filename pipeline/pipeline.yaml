@@ -2,17 +2,26 @@ tasks:
   - source: ../src/s1_load_data.py
     name: load_data
     product:
-      nb: ../src/pipeline_notebooks/s1.ipynb
+      nb: ../products/{{execution_time}}/pipeline_notebooks/s1.ipynb
       data: ../data/raw_data.csv
 
   - source: ../src/s2_preprocess_data.py
     name: preprocess_data
     product:
-      nb: ../src/pipeline_notebooks/s2.ipynb
+      nb: ../products/{{execution_time}}/pipeline_notebooks/s2.ipynb
       data: ../data/processed_data.csv
 
   - source: ../src/s3_train_model.py
     name: train
+    static_analysis: False # notebook does not have fixed set of parameters
     product:
-      nb: ../src/pipeline_notebooks/s3.ipynb
-      model: ../models/model.pickle
+      nb: ../products/{{execution_time}}/pipeline_notebooks/s3.ipynb
+      model: ../products/{{execution_time}}/models/model.pickle
+    grid:
+      - model_type: [random-forest]
+        n_estimators: [1, 5]
+        criterion: [gini, entropy]
+
+      - model_type: [gbm]
+        n_estimators: [3, 5]
+        learning_rate: [0.1, 0.2]
