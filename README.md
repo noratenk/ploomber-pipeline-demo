@@ -14,9 +14,9 @@ This will create an anaconda environment called ploomber-demo.
 ```sh
     conda activate ploomber-demo
 ```
-Build pipeline with:
+Run pipeline with:
 ```sh
-    ploomber build --entry-point pipeline/pipeline.yaml
+    python pipeline/run.py
 ```
 
 ## Resources:
